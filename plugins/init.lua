@@ -31,6 +31,25 @@ return {
     end,
   },
 
+["simrat39/rust-tools.nvim"]={
+    after = "nvim-lspconfig",
+    config=function ()
+      local rt = require("rust-tools")
+      rt.setup({
+        server = {
+          on_attach = function(_, bufnr)
+            -- Hover actions
+            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+            -- Code action groups
+            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+          end,
+        },
+      })
+    end
+  },
+--Debugging
+["nvim-lua/plenary.nvim"]={},
+["mfussenegger/nvim-dap"]={},
   -- overrde plugin configs
   ["nvim-treesitter/nvim-treesitter"] = {
     override_options = overrides.treesitter,
@@ -38,6 +57,10 @@ return {
 
   ["williamboman/mason.nvim"] = {
     override_options = overrides.mason,
+  },
+  ["williamboman/mason-lspconfig.nvim"]={
+        after = "williamboman/mason.nvim",
+
   },
 
   ["kyazdani42/nvim-tree.lua"] = {

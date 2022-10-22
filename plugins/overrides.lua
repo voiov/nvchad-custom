@@ -8,6 +8,7 @@ M.treesitter = {
     "css",
     "typescript",
     "c",
+    "rust",
   },
 }
 
@@ -22,6 +23,12 @@ M.mason = {
     "html-lsp",
     "typescript-language-server",
     "deno",
+    --rust
+    "rust-analyzer",
+    "vue-language-server",
+    "yaml-language-server",
+    "codelldb"
+
   },
 }
 
