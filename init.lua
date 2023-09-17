@@ -17,6 +17,8 @@ vim.g.neovide_transparency = 0.0
 vim.g.transparency = 0.8
 vim.g.neovide_background_color = "#0f1117" .. alpha()
 
+vim.g.neovide_input_macos_alt_is_meta = false
+
 local function set_ime(args)
     if args.event:match("Enter$") then
         vim.g.neovide_input_ime = true
