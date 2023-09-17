@@ -82,6 +82,14 @@ local plugins = {
   { "nvim-lua/plenary.nvim" },
   { "mfussenegger/nvim-dap" },
   { "voiov/habit-neovim",lazy=false },
+  {"NvChad/nvcommunity",
+    { import = "nvcommunity.lsp.barbecue" },
+    { import = "nvcommunity.lsp.codeactionmenu" },
+    { import = "nvcommunity.lsp.lsplines" },
+    { import = "nvcommunity.lsp.lspui" },
+    { import = "nvcommunity.lsp.lspsaga" },
+    { import = "nvcommunity.lsp.prettyhover" },
+  }
 }
 
 return plugins
